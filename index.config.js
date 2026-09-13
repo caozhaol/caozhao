@@ -1,8 +1,6 @@
-var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -16,14 +14,6 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // src/index.config.js
@@ -32,18 +22,6 @@ __export(index_config_exports, {
   default: () => index_config_default
 });
 module.exports = __toCommonJS(index_config_exports);
-
-// src/util/network.js
-var import_os = __toESM(require("os"), 1);
-var findIPv4 = (IPInfos) => {
-  return IPInfos?.find((item) => item.family === "IPv4")?.address;
-};
-var getIPAddress = function() {
-  const interfaces = import_os.default.networkInterfaces();
-  return findIPv4(interfaces["en0"]) || findIPv4(interfaces["en1"]) || findIPv4(interfaces["en2"]) || "127.0.0.1";
-};
-
-// src/index.config.js
 var index_config_default = {
   ali: {
     token: "",
@@ -60,19 +38,10 @@ var index_config_default = {
   y115: {
     cookie: ""
   },
-  baidu: {
-    cookie: ""
-  },
-  bili: {
-    cookie: ""
-  },
   muou: {
     url: ""
   },
   wogg: {
-    url: ""
-  },
-  woniu: {
     url: ""
   },
   leijing: {
@@ -91,16 +60,52 @@ var index_config_default = {
   pans: {
     list: []
   },
-  danmu: {
-    urls: [{ address: `http://${getIPAddress()}:9321`, name: "内置" }],
+   danmu: {
+    urls: [
+           { address: "https://logdanmu.dpdns.org", name: "默认1" },
+           { address: "https://fjj0417.dpdns.org/87654321", name: "默认2" }, 
+           { address: "https://dm.stardm.us.kg:443/87654321", name: "默认3" }, 
+           { address: "https://danmu.14812910.xyz/87654321", name: "默认4" }, 
+           { address: "https://313236.xyz/87654321", name: "默认5" }
+          ],
     autoPush: true
   },
-  t4: {
-    list: []
-  },
-  cms: {
-    list: []
-  },
+ t4: {list: [
+    {name: "🔞聚合传媒",
+      address: "https://php.doube.eu.org/spider/php/麻豆.php"}
+]},
+  cms: {list: [
+  {name: "🔞滴滴", address: "https://api.ddapi.cc/api.php/provide/vod"},
+  {name: "🔞鸡坤", address: "https://jkunzyapi.com/api.php/provide/vod"},
+  {name: "🔞TG资源", address: "https://tgzyz.pp.ua/api.php/provide/vod"},
+  {name: "🔞越南", address: "https://vnzyz.com/api.php/provide/vod"},
+  {name: "🔞奥斯卡", address: "https://aosikazy4.com/api.php/provide/vod"},
+  {name: "🔞X细胞", address: "https://www.xxibaozyw.com/api.php/provide/vod"},
+  {name: "🔞大奶子", address: "https://apidanaizi.com/api.php/provide/vod"},
+  {name: "🔞精品X", address: "https://www.jingpinx.com/api.php/provide/vod"},
+  {name: "🔞老色p", address: "https://apilsbzy1.com/api.php/provide/vod"},
+  {name: "🔞番号", address: "http://fhapi9.com/api.php/provide/vod"},
+  {name: "🔞黄色仓库", address: "https://hsckzy888.com/api.php/provide/vod/from/hsckm3u8/at/json"},
+  {name: "🔞百花", address: "https://bhziyuan.com/api.php/provide/vod/?ac=list"},
+  {name: "🔞辣椒", address: "http://lajiaozy.com/api.php/provide/vod"},
+  {name: "🔞155", address: "https://155api.com/api.php/provide/vod"},
+  {name: "🔞杏吧", address: "https://xingba111.com/api.php/provide/vod/?ac=list"},
+  {name: "🔞玉兔", address: "https://apiyutu.com/api.php/provide/vod"},
+  {name: "🔞AIvin", address: "http://lbapiby.com/api.php/provide/vod/at/json"},
+  {name: "🔞乐播", address: "https://lbapi9.com/api.php/provide/vod"},
+  {name: "🔞奶香香", address: "https://naixxzy.com/api.php/provide/vod"},
+  {name: "🔞森林", address: "http://slapibf.com/api.php/provide/vod"},
+  {name: "🔞番茄", address: "https://fqzy.me//api.php/provide/vod/?ac=list"},
+  {name: "🔞鲨鱼", address: "https://shayuapi.com/api.php/provide/vod"},
+  {name: "🔞91麻豆", address: "http://91md.me/api.php/provide/vod"},
+  {name: "🔞CK百货", address: "https://ckbh1.xyz/api.php/provide/vod/?ac=list"},
+  {name: "🔞桃花", address: "https://thzy1.me/api.php/provide/vod/?ac=list"},
+  {name: "🔞豆豆", address: "https://doudouzy.com/api.php/provide/vod/?ac=list"},
+  {name: "🔞色猫", address: "http://caiji.semaozy.net/inc/apijson_vod.php"},
+  {name: "🔞黑料X", address: "https://www.heiliaozyapi.com/api.php/provide/vod/?ac=list"},
+  {name: "🔞香蕉", address: "https://www.xiangjiaozyw.com/api.php/provide/vod/?ac=list"},
+  {name: "🔞百万", address: "https://api.bwzyz.com/api.php/provide/vod/at/json"}
+]},
   alist: [
     {
       name: "🐉神族九帝",
